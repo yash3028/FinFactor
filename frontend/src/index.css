@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom animations */
-
 @keyframes fadeIn {
   from {
     opacity: 0;
