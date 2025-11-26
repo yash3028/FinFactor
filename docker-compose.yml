@@ -5,21 +5,17 @@ services:
     ports:
       - "5000:5000"
     env_file:
-      - ./backend/.env # <-- Correct way
-    volumes:
-      - ./backend:/app
+      - ./backend/.env
     networks:
       - aqi-net
 
   frontend:
-    build: ./fronend
-    container_name: aqi-fronend
+    build: ./frontend
+    container_name: aqi-frontend
     ports:
       - "3000:3000"
     environment:
       - CHOKIDAR_USEPOLLING=true
-    volumes:
-      - ./fronend:/app
     networks:
       - aqi-net
     depends_on:
